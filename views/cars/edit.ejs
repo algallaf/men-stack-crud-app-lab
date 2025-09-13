@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Car</title>
+</head>
+<body>
+  <h1>Edit <%= car.name %></h1>
+  <form action="/cars/<%= car._id %>?_method=PUT" method="POST">
+    <label>Name: <input type="text" name="name" value="<%= car.name %>" ></label><br>
+    <label>Brand: <input type="text" name="brand" value="<%= car.brand %>" ></label><br>
+    <label>Year: <input type="text" name="year" value="<%= car.year %>"></label><br>
+    <label>Price: <input type="text" name="price" value="<%= car.price %>"></label><br>
+    <label>Description: <textarea name="description"><%= car.description %></textarea></label><br>
+    <button type="submit">Update</button>
+  </form>
+  <a href="/cars">Back</a>
+</body>
+</html>

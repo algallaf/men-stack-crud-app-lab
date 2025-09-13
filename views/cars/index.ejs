@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All Cars</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>All Cars</h1>
+  <a href="/cars/new"> Add New Car</a>
+  <ul>
+    <% cars.forEach(car => { %>
+      <li>
+        <a href="/cars/<%= car._id %>"><%= car.name %> - <%= car.brand %></a>
+        <form action="/cars/<%= car._id %>?_method=DELETE" method="POST" >
+        <button type="submit">Delete</button>
+        </form>
+        <a href="/cars/<%= car._id %>/edit">Edit</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
