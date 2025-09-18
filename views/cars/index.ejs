@@ -11,10 +11,6 @@
     <% cars.forEach(car => { %>
       <li>
         <a href="/cars/<%= car._id %>"><%= car.name %> - <%= car.brand %></a>
-        <form action="/cars/<%= car._id %>?_method=DELETE" method="POST" >
-        <button type="submit">Delete</button>
-        </form>
-        <a href="/cars/<%= car._id %>/edit">Edit</a>
       </li>
     <% }) %>
   </ul>
